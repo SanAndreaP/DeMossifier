@@ -22,20 +22,20 @@ public class NpcTrades : GlobalNPC
 
         shop.item[nextSlot++].SetDefaults(ModContent.ItemType<Items.DeMossifier>());
 
-        var special = ((_currWiltSolution ?? -1) < 0 || (_currGrowSolution ?? -1) < 0) && Main.rand.NextBool(100);
+        var special = ((_currWiltSolution ?? 0) != 0 || (_currGrowSolution ?? 0) != 0) && Main.rand.NextBool(100);
         if( _currWiltSolution == null ) {
             var wilts = DeMossifier.GetSolutions(false, special, false);
-            _currWiltSolution = wilts.Count > 0 ? wilts[Main.rand.Next(wilts.Count)] : -1;
+            _currWiltSolution = wilts.Count > 0 ? wilts[Main.rand.Next(wilts.Count)] : 0;
         }
         if( _currGrowSolution == null ) {
             var grows = DeMossifier.GetSolutions(true, special, false);
-            _currGrowSolution = grows.Count > 0 ? grows[Main.rand.Next(grows.Count)] : -1;
+            _currGrowSolution = grows.Count > 0 ? grows[Main.rand.Next(grows.Count)] : 0;
         }
 
-        if( _currWiltSolution > 0 ) {
+        if( _currWiltSolution != 0 ) {
             shop.item[nextSlot++].SetDefaults(_currWiltSolution.Value);
         }
-        if( _currGrowSolution > 0 ) {
+        if( _currGrowSolution != 0 ) {
             shop.item[nextSlot++].SetDefaults(_currGrowSolution.Value);
         }
     }
@@ -45,13 +45,13 @@ public class NpcTrades : GlobalNPC
             return;
         }
         
-        if( tag.ContainsKey("CurrWiltSolution") ) {
-            _currWiltSolution = tag.GetInt("CurrWiltSolution");
+        if( tag.ContainsKey("CurrWiltSolution2") ) {
+            _currWiltSolution = tag.GetInt("CurrWiltSolution2");
         } else {
             _currWiltSolution = null;
         }
-        if( tag.ContainsKey("CurrGrowSolution") ) {
-            _currGrowSolution = tag.GetInt("CurrGrowSolution");
+        if( tag.ContainsKey("CurrGrowSolution2") ) {
+            _currGrowSolution = tag.GetInt("CurrGrowSolution2");
         } else {
             _currGrowSolution = null;
         }
@@ -63,15 +63,15 @@ public class NpcTrades : GlobalNPC
         }
         
         if( _currWiltSolution != null ) {
-            tag.Set("CurrWiltSolution", _currWiltSolution.Value);
+            tag.Set("CurrWiltSolution2", _currWiltSolution.Value);
         }
         if( _currGrowSolution != null ) {
-            tag.Set("CurrGrowSolution", _currGrowSolution.Value);
+            tag.Set("CurrGrowSolution2", _currGrowSolution.Value);
         }
     }
 
     internal static void Reset() {
-        _currWiltSolution = -1;
-        _currGrowSolution = -1;
+        _currWiltSolution = null;
+        _currGrowSolution = null;
     }
 }
