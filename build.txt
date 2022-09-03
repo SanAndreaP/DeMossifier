@@ -1,0 +1,5 @@
+displayName = DeMossifier
+author = SanAndreaP
+version = 1.0
+buildIgnore = *.kra
+homepage = 

@@ -1,0 +1,48 @@
+Mods: {
+    DeMossifier: {
+        ItemName: {
+            DeMossifier: "Demoosifizierer"
+            GeneralWiltSolution: "Moos-Welk-Lösung"
+            GreenWiltSolution: "Grüne Moos-Welk-Lösung"
+            BrownWiltSolution: "Braune Moos-Welk-Lösung"
+            RedWiltSolution: "Rote Moos-Welk-Lösung"
+            BlueWiltSolution: "Blaue Moos-Welk-Lösung"
+            PurpleWiltSolution: "Lila Moos-Welk-Lösung"
+            LavaWiltSolution: "Lavamoos-Welk-Lösung"
+            KryptonWiltSolution: "Krypton-Moos-Welk-Lösung"
+            XenonWiltSolution: "Xenon-Moos-Welk-Lösung"
+            ArgonWiltSolution: "Argon-Moos-Welk-Lösung"
+            GreenGrowSolution: "Grüne Moos-Wachs-Lösung"
+            BrownGrowSolution: "Braune Moos-Wachs-Lösung"
+            RedGrowSolution: "Rote Moos-Wachs-Lösung"
+            BlueGrowSolution: "Blaue Moos-Wachs-Lösung"
+            PurpleGrowSolution: "Lila Moos-Wachs-Lösung"
+            LavaGrowSolution: "Lavamoos-Wachs-Lösung"
+            KryptonGrowSolution: "Krypton-Moos-Wachs-Lösung"
+            XenonGrowSolution: "Xenon-Moos-Wachs-Lösung"
+            ArgonGrowSolution: "Argon-Moos-Wachs-Lösung"
+        }
+        ItemTooltip: {
+            DeMossifier: "Wächst und welkt Moos auf Steinblöcken, wenn versprüht\nVerwendet Moos-Lösung"
+            GeneralWiltSolution: "Verwendet vom Demoosifizierer\nVerwelkt jedes Moos"
+            GreenWiltSolution: "Verwendet vom Demoosifizierer\nVerwelkt grünes Moos"
+            BrownWiltSolution: "Verwendet vom Demoosifizierer\nVerwelkt braunes Moos"
+            RedWiltSolution: "Verwendet vom Demoosifizierer\nVerwelkt rotes Moos"
+            BlueWiltSolution: "Verwendet vom Demoosifizierer\nVerwelkt blaues Moos"
+            PurpleWiltSolution: "Verwendet vom Demoosifizierer\nVerwelkt lila Moos"
+            LavaWiltSolution: "Verwendet vom Demoosifizierer\nVerwelkt Lavamoos"
+            KryptonWiltSolution: "Verwendet vom Demoosifizierer\nVerwelkt Krypton-Moos"
+            XenonWiltSolution: "Verwendet vom Demoosifizierer\nVerwelkt Xenon-Moos"
+            ArgonWiltSolution: "Verwendet vom Demoosifizierer\nVerwelkt Argon-Moos"
+            GreenGrowSolution: "Verwendet vom Demoosifizierer\nWächst grünes Moos"
+            BrownGrowSolution: "Verwendet vom Demoosifizierer\nWächst braunes Moos"
+            RedGrowSolution: "Verwendet vom Demoosifizierer\nWächst rotes Moos"
+            BlueGrowSolution: "Verwendet vom Demoosifizierer\nWächst blaues Moos"
+            PurpleGrowSolution: "Verwendet vom Demoosifizierer\nWächst lila Moos"
+            LavaGrowSolution: "Verwendet vom Demoosifizierer\nWächst Lavamoos"
+            KryptonGrowSolution: "Verwendet vom Demoosifizierer\nWächst Krypton-Moos"
+            XenonGrowSolution: "Verwendet vom Demoosifizierer\nWächst Xenon-Moos"
+            ArgonGrowSolution: "Verwendet vom Demoosifizierer\nWächst Argon-Moos"
+        }
+    }
+}
