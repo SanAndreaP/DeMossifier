@@ -1,1 +1,11 @@
-The DeMossifier adds a Clentaminator-style item that can remove or grow moss en masse.
+This mod adds a Clentaminator-style item with solutions that can remove or grow moss en masse.
+
+You can buy the Demossifier from the Dryad, but only once you also have a Painter living somewhere.
+The Dryad also sells one random wilting and one growing solution, which is different every (in-game) day.
+Usually you get regular (non-glowing) moss solutions, but there is a 1% chance that the Dryad will stock glowing solutions.
+
+There is also a way to craft the solutions (only at the Alchemy Table, with both Dryad and Painter being housed somewhere):
+1 Bottled Water, 1 Moss of the desired type and either 1 Blinkroot for 1 growing or 1 Deathweed for 10 wilting solutions.
+
+Combining all wilting solutions creates a general wilting solution, with the resulting amount depending on the amount of the
+types of mosses being used (9 by default).

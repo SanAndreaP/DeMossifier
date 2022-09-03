@@ -2,4 +2,4 @@ displayName = DeMossifier
 author = SanAndreaP
 version = 1.0
 buildIgnore = *.kra
-homepage = 
+homepage = https://github.com/SanAndreaP/DeMossifier

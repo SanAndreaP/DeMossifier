@@ -50,7 +50,7 @@ public abstract class MossSolution<T> : ModItem where T : ModProjectile
             return;
         }
 
-        var recipe = this.CreateRecipe(10);
+        var recipe = this.CreateRecipe(this._grow ? 1 : 10);
         recipe.AddCondition(new Recipe.Condition(
             NetworkText.FromLiteral("Only available if you have Dryad and Painter"), _ => {
                 var dryad = Main.npc.FirstOrDefault(n => n.type == NPCID.Dryad);
