@@ -62,6 +62,7 @@ public abstract class MossSolution<T> : ModItem where T : ModProjectile
         recipe.AddIngredient(this._grow ? ItemID.Blinkroot : ItemID.Deathweed);
         recipe.AddIngredient(this._recpItem.Value);
         recipe.AddTile(TileID.AlchemyTable);
+        recipe.AddConsumeItemCallback(Recipe.ConsumptionRules.Alchemy);
         recipe.Register();
     }
 }
