@@ -47,6 +47,15 @@ public class DeMossifier : Mod
     }
 
     public override void Load() {
+        if( ModLoader.TryGetMod("TheConfectionRebirth", out var confection) ) {
+            var sacchariteId = confection.Find<ModTile>("SacchariteBlock").Type;
+            Items.SacchariteWiltSolution.recipeItemOverride = sacchariteId;
+            Projectiles.SacchariteWiltSolution.replaceTileOverride = sacchariteId;
+            
+            this.AddContent<Projectiles.SacchariteWiltSolution>();
+            this.AddContent<Items.SacchariteWiltSolution>();
+        }
+        
         On.Terraria.Main.UpdateTime_StartDay += OnStartDay;
     }
 
@@ -54,7 +63,7 @@ public class DeMossifier : Mod
         REGISTERED_SOLUTIONS.Clear();
         REGISTERED_MOSSES.Clear();
         REGISTERED_MOSS_BRICKS.Clear();
-        
+
         On.Terraria.Main.UpdateTime_StartDay -= OnStartDay;
     }
 

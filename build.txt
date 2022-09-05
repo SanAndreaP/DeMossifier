@@ -1,5 +1,6 @@
 displayName = DeMossifier
 author = SanAndreaP
-version = 1.2
+version = 1.3
 buildIgnore = *.kra
 homepage = https://github.com/SanAndreaP/DeMossifier
+sortAfter = TheConfectionRebirth

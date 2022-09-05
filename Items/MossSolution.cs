@@ -14,11 +14,11 @@ public abstract class MossSolution<T> : ModItem where T : ModProjectile
 {
     private readonly string _dispName;
     private readonly string _tooltip;
-    private readonly short? _recpItem;
+    private readonly int? _recpItem;
     private readonly bool _grow;
     private readonly bool _special;
 
-    public MossSolution(string displayName, string tooltip, bool grow, bool special, short? recipeItem = null) {
+    public MossSolution(string displayName, string tooltip, bool grow, bool special, int? recipeItem = null) {
         this._dispName = displayName;
         this._tooltip = tooltip;
         this._recpItem = recipeItem;
@@ -132,6 +132,13 @@ public class XenonWiltSolution : MossSolution<Projectiles.XenonWiltSolution>
 public class ArgonWiltSolution : MossSolution<Projectiles.ArgonWiltSolution>
 {
     public ArgonWiltSolution() : base("Argon Moss Wilt Solution", "Wilts argon moss", false, true, ItemID.ArgonMoss) { }
+}
+
+[Autoload(false)]
+public class SacchariteWiltSolution : MossSolution<Projectiles.SacchariteWiltSolution>
+{
+    public static int recipeItemOverride;
+    public SacchariteWiltSolution() : base("Saccharite Removal Solution", "Removes saccharite", false, true, recipeItemOverride) { }
 }
 #endregion
 

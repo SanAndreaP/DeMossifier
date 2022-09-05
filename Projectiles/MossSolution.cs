@@ -15,14 +15,14 @@ public abstract class MossSolution : ModProjectile
     public override string Texture => "DeMossifier:Projectiles/EmptyProjectile";
 
     private readonly ushort? _mossTypeId;
-    private readonly ushort _stoneTypeId;
+    private readonly ushort? _stoneTypeId;
     private readonly ushort? _mossBrickTypeId;
-    private readonly ushort _brickTypeId;
+    private readonly ushort? _brickTypeId;
     private readonly bool _grow;
     private readonly int _dustTypeId;
 
     public MossSolution(bool grow, int dustTypeId,
-                        ushort stoneTypeId = TileID.Stone, ushort brickTypeId = TileID.GrayBrick)
+                        ushort? stoneTypeId = TileID.Stone, ushort? brickTypeId = TileID.GrayBrick)
     {
         this._grow = grow;
         this._dustTypeId = dustTypeId;
@@ -32,7 +32,7 @@ public abstract class MossSolution : ModProjectile
     }
 
     public MossSolution(ushort mossTypeId, ushort mossBrickTypeId, bool grow, int dustTypeId,
-                        ushort stoneTypeId = TileID.Stone, ushort brickTypeId = TileID.GrayBrick)
+                        ushort? stoneTypeId = TileID.Stone, ushort? brickTypeId = TileID.GrayBrick)
             : this(grow, dustTypeId, stoneTypeId, brickTypeId)
     {
         this._mossTypeId = mossTypeId;
@@ -104,9 +104,17 @@ public abstract class MossSolution : ModProjectile
                 var currTile = Main.tile[currX, currY];
 
                 if( DeMossifier.CanDeMossStone(this._mossTypeId, currTile.TileType) ) {
-                    currTile.TileType = this._stoneTypeId;
+                    if( this._stoneTypeId != null ) {
+                        currTile.TileType = this._stoneTypeId.Value;
+                    } else {
+                        currTile.ClearTile();
+                    }
                 } else if( DeMossifier.CanDeMossBrick(this._mossBrickTypeId, currTile.TileType) ) {
-                    currTile.TileType = this._brickTypeId;
+                    if( this._brickTypeId != null ) {
+                        currTile.TileType = this._brickTypeId.Value;
+                    } else {
+                        currTile.ClearTile();
+                    }
                 } else {
                     continue;
                 }
@@ -134,7 +142,9 @@ public abstract class MossSolution : ModProjectile
     protected static void CheckAndGrowMossTile(int x, int y, ushort mossTileId, Tile currTile) {
         for( var stoneX = -1; stoneX <= 1; stoneX++ ) {
             for( var stoneY = -1; stoneY <= 1; stoneY++ ) {
-                if( Main.tile[x + stoneX, y + stoneY].HasTile ) {
+                var tileX = x + stoneX;
+                var tileY = y + stoneY;
+                if( Main.tile[tileX, tileY].HasTile && !Main.tileLighted[currTile.TileType] ) {
                     continue;
                 }
 
@@ -198,6 +208,15 @@ public class XenonWiltSolution : MossSolution
 public class ArgonWiltSolution : MossSolution
 {
     public ArgonWiltSolution() : base(TileID.ArgonMoss, TileID.ArgonMossBrick, false, DustID.Clentaminator_Purple) { }
+}
+
+//TheConfection
+[Autoload(false)]
+public class SacchariteWiltSolution : MossSolution
+{
+    public static ushort replaceTileOverride;
+    
+    public SacchariteWiltSolution() : base(replaceTileOverride, replaceTileOverride, false, ModContent.DustType<BrownMossDust>(), stoneTypeId: null, brickTypeId: null) { }
 }
 #endregion
 

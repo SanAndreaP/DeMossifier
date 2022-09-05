@@ -14,29 +14,38 @@ public class NpcTrades : GlobalNPC
     private static int? _currGrowSolution;
     
     public override void SetupShop(int type, Chest shop, ref int nextSlot) {
-        var painter = Main.npc.FirstOrDefault(npc => npc.type == NPCID.Painter);
+        switch( type ) {
+            case NPCID.Dryad: {
+                var painter = Main.npc.FirstOrDefault(npc => npc.type == NPCID.Painter);
 
-        if( type != NPCID.Dryad || painter is not { active: true, homeless: false } ) {
-            return;
-        }
+                if( painter is not { active: true, homeless: false } ) {
+                    return;
+                }
 
-        shop.item[nextSlot++].SetDefaults(ModContent.ItemType<Items.DeMossifier>());
+                shop.item[nextSlot++].SetDefaults(ModContent.ItemType<Items.DeMossifier>());
 
-        var special = ((_currWiltSolution ?? 0) != 0 || (_currGrowSolution ?? 0) != 0) && Main.rand.NextBool(100);
-        if( _currWiltSolution == null ) {
-            var wilts = DeMossifier.GetSolutions(false, special, false);
-            _currWiltSolution = wilts.Count > 0 ? wilts[Main.rand.Next(wilts.Count)] : 0;
-        }
-        if( _currGrowSolution == null ) {
-            var grows = DeMossifier.GetSolutions(true, special, false);
-            _currGrowSolution = grows.Count > 0 ? grows[Main.rand.Next(grows.Count)] : 0;
-        }
+                var special = ((_currWiltSolution ?? 0) != 0 || (_currGrowSolution ?? 0) != 0) && Main.rand.NextBool(100);
+                if( _currWiltSolution == null ) {
+                    var wilts = DeMossifier.GetSolutions(false, special, false);
+                    _currWiltSolution = wilts.Count > 0 ? wilts[Main.rand.Next(wilts.Count)] : 0;
+                }
+                if( _currGrowSolution == null ) {
+                    var grows = DeMossifier.GetSolutions(true, special, false);
+                    _currGrowSolution = grows.Count > 0 ? grows[Main.rand.Next(grows.Count)] : 0;
+                }
 
-        if( _currWiltSolution != 0 ) {
-            shop.item[nextSlot++].SetDefaults(_currWiltSolution.Value);
-        }
-        if( _currGrowSolution != 0 ) {
-            shop.item[nextSlot++].SetDefaults(_currGrowSolution.Value);
+                if( _currWiltSolution != 0 ) {
+                    shop.item[nextSlot++].SetDefaults(_currWiltSolution.Value);
+                }
+                if( _currGrowSolution != 0 ) {
+                    shop.item[nextSlot++].SetDefaults(_currGrowSolution.Value);
+                }
+            } break;
+            case NPCID.Wizard: {
+                if( ModLoader.HasMod("TheConfectionRebirth") ) {
+                    shop.item[nextSlot++].SetDefaults(ModContent.ItemType<Items.SacchariteWiltSolution>());
+                }
+            } break;
         }
     }
 
