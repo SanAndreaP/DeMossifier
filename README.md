@@ -55,7 +55,7 @@ Now make your changes and make a pull request (PR)[^3]. I will review your PR an
 
 
 
-[^1]: The file name needs to be `[language_code]-[country_code].hjson` (e.g. `en-US.hjson` for US english). Valid codes can be found [here](https://www.fincher.org/Utilities/CountryLanguageList.shtml).
+[^1]: The file name needs to be `[language_code]-[country_code].hjson` (e.g. `en-US.hjson` for US english). Valid codes can be found here: https://www.fincher.org/Utilities/CountryLanguageList.shtml
 [^2]: How to fork a repo: https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop
 [^3]: How to create a pull request: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork
 [^4]: a beginners guide can be found here: https://github.com/tModLoader/tModLoader/wiki/Basic-tModLoader-Modding-Guide
