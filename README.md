@@ -1,6 +1,7 @@
 # ![DeMossifier logo][logo] DeMossifier
+
 [![License][b_license]](https://github.com/SanAndreaP/DeMossifier/blob/main/LICENSE.md)
-![Version][b_version]
+[![Version][b_version]](https://github.com/SanAndreaP/DeMossifier/tags)
 [![Game][b_game]](https://store.steampowered.com/app/105600/Terraria/)
 [![API][b_api]](https://store.steampowered.com/app/1281930/tModLoader/)
 
@@ -8,19 +9,58 @@
 [![Reddit][b_reddit]](https://reddit.com/u/SanAndreasP)
 [![Sponsor][b_sponsor]](https://github.com/sponsors/SanAndreaP)
 
+## Player Info
 
-This is a tModLoader mod.
-
-It adds a Clentaminator-style item with solutions that can remove or grow moss en masse.
-
-<br>
-
-**Available on the tModLoader workshop: [Steam Workshop Page](https://steamcommunity.com/sharedfiles/filedetails/?id=2858303413)**
+**Subscribe to the mod on the tModLoader workshop: [Steam Workshop Page](https://steamcommunity.com/sharedfiles/filedetails/?id=2858303413)**
 
 <br>
 
-## Demo video
+This tModLoader mod adds a Clentaminator-style item with solutions that can remove or grow moss en masse.
+
+You can buy the Demossifier from the Dryad, but only once you also have a Painter living somewhere.
+The Dryad also sells one random wilting and one growing solution, which is different every (in-game) day.
+Usually you get regular (non-glowing) moss solutions, but there is a 1% chance that the Dryad will stock glowing solutions.
+
+There is also a way to craft the solutions (only at the Alchemy Table, with both Dryad and Painter being housed somewhere):
+1 Bottled Water, 1 Moss of the desired type and either 1 Blinkroot for 1 growing or 1 Deathweed for 10 wilting solutions.
+Combining all wilting solutions creates a general wilting solution, with the resulting amount depending on the amount of the types of mosses being used (9 by default).
+
+### Demo video
+
 [![DeMossifier Video](https://github.com/SanAndreaP/DeMossifier/blob/main/.github/DeMossifierVideo.png?raw=true)](http://www.youtube.com/watch?feature=player_embedded&v=TGOZymE8CBg)
+
+## Contributor Info
+
+### For Translators
+
+You want to translate the mod to a language you're proficient in? There are two ways of doing so:
+
+1. Fork[^2] this repo and go to the `lang` folder. Here you can find the already translated files. Either modify an existing one or create a new file[^1].
+After you've done your changes, make a pull request (PR)[^3].
+
+2. Copy the currently available german translation file ([here](https://raw.githubusercontent.com/SanAndreaP/DeMossifier/main/lang/de-DE.hjson)) and create a new .hjson file[^1] somewhere (or download the file by right-clicking the link and choose `Save Target/Link As...`, optionally rename it).
+After you've done your changes, create a new [issue](https://github.com/SanAndreaP/DeMossifier/issues) and attach your file there.
+
+### For Developers
+
+To contribute to this project via code, you will need
+ - to know how to code with C#,
+ - to know how to mod with tModLoader[^4],
+ - an IDE of your choosing that can handle C# projects. I recommend Visual Studio or JetBrains Rider.
+
+Fork[^2] this repo to the tModLoader ModSources directory (on Windows it is `Documents\My Games\Terraria\tModLoader\ModSources\`).
+If done correctly, you can open the .csproj file with your IDE in the following location: `[...]/tModLoader/ModSources/DeMossifier/DeMossifier.csproj`.
+Now make your changes and make a pull request (PR)[^3]. I will review your PR and merge it, if there's no issues with the PR.
+
+
+
+
+[^1]: The file name needs to be `[language_code]-[country_code].hjson` (e.g. `en-US.hjson` for US english). Valid codes can be found [here](https://www.fincher.org/Utilities/CountryLanguageList.shtml).
+[^2]: How to fork a repo: https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop
+[^3]: How to create a pull request: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork
+[^4]: a beginners guide can be found here: https://github.com/tModLoader/tModLoader/wiki/Basic-tModLoader-Modding-Guide
+
+
 
 [logo]: https://raw.githubusercontent.com/SanAndreaP/DeMossifier/main/icon.png "DeMossifier logo"
 
