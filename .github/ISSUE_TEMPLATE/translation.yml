@@ -1,0 +1,30 @@
+name: Feature Request
+description: Request a new feature or a change to an existing one
+labels: ["translation"]
+assignees:
+  - SanAndreaP
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to provide a translation. A reference file can be found here: https://github.com/SanAndreaP/DeMossifier/blob/main/lang/de-DE.hjson
+        
+        ---
+        
+        Appropriate language codes can be found here: https://www.fincher.org/Utilities/CountryLanguageList.shtml
+  - type: input
+    id: language
+    attributes:
+      label: "Language Code"
+      description: "Please provide the standardized language code."
+      placeholder: "en-US"
+    validations:
+      required: true
+  - type: textarea
+    id: content
+    attributes:
+      label: "Translation file"
+      description: "Provide the contents of your translation file. No need for backticks."
+      render: shell
+    validations:
+      required: true

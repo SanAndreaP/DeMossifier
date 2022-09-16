@@ -1,0 +1,65 @@
+name: Feature Request
+description: Request a new feature or a change to an existing one
+labels: ["suggestion"]
+assignees:
+  - SanAndreaP
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before requesting a feature/change, please search for it in the existing issues. 
+        
+        ---
+        
+        Thank you for taking the time to provide a feature request.  
+  - type: input
+    id: Terraria
+    attributes:
+      label: "Terraria Version"
+      description: "Please provide the full Terraria version."
+      placeholder: "v1.4.3.6"
+    validations:
+      required: true
+  - type: input
+    id: tModLoader
+    attributes:
+      label: "tModLoader Version"
+      description: "Please provide the full tModLoader version."
+      placeholder: "v2022.8.54.6"
+    validations:
+      required: true
+  - type: input
+    id: modVer
+    attributes:
+      label: "DeMossifier Version"
+      description: "Please provide the version of this mod you're using."
+      placeholder: "v1.3"
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: "Feature Description"
+      description: "What feature/change would you like to see implemented?"
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: "client.log output"
+      description: "Provide the contents of the client.log file (found in `[SteamLocation]/steamapps/common/tModLoader/tModLoader-Logs/`). No need for backticks."
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: crashlogs
+    attributes:
+      label: "Relevant log output"
+      description: "If applicable, provide the contents of the client-crashlog.txt file (found in `[SteamLocation]/steamapps/common/tModLoader/`). No need for backticks."
+      render: shell
+  - type: textarea
+    id: files
+    attributes:
+      label: Additional files
+      description: "Do you have additional files you want to provide, like screenshots? Unfortunately, as of now, these forms do not support file upload. So you need to upload them yourself somewhere and paste the link(s) here."
+      render: shell
