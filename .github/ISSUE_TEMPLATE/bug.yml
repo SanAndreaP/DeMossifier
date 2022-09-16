@@ -48,7 +48,7 @@ body:
     id: spmp
     attributes:
       label: Single- or Multiplayer
-      description: Is this bug happening on single- or multiplayer?
+      description: "Is this bug happening on single- or multiplayer?"
 	  multiple: false
       options:
         - Singleplayer
@@ -71,7 +71,7 @@ body:
     id: logs
     attributes:
       label: client.log output
-      description: Provide the contents of the client.log file (found in `[SteamLocation]/steamapps/common/tModLoader/tModLoader-Logs/`). No need for backticks here.
+      description: "Provide the contents of the client.log file (found in `[SteamLocation]/steamapps/common/tModLoader/tModLoader-Logs/`). No need for backticks here."
       render: shell
     validations:
       required: true
@@ -79,7 +79,7 @@ body:
     id: crashlogs
     attributes:
       label: Relevant log output
-      description: If applicable, provide the contents of the client-crashlog.txt file (found in `[SteamLocation]/steamapps/common/tModLoader/`). No need for backticks here.
+      description: "If applicable, provide the contents of the client-crashlog.txt file (found in `[SteamLocation]/steamapps/common/tModLoader/`). No need for backticks here."
       render: shell
   - type: textarea
     id: files
