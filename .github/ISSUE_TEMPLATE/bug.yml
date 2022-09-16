@@ -49,7 +49,7 @@ body:
     attributes:
       label: Single- or Multiplayer
       description: "Is this bug happening on single- or multiplayer?"
-	  multiple: false
+      multiple: false
       options:
         - Singleplayer
         - Multiplayer
