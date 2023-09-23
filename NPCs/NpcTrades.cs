@@ -1,4 +1,5 @@
 using System.Linq;
+using DeMossifier.Items;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -13,47 +14,31 @@ public class NpcTrades : GlobalNPC
     private static int? _currWiltSolution;
     private static int? _currGrowSolution;
 
-    private static Item GetEmptyItem(Item[] items) {
-        foreach( var item in items ) {
-            if( item.IsAir ) {
-                return item;
-            }
+    public override void ModifyShop(NPCShop shop) {
+        if( _currGrowSolution == null || _currWiltSolution == null ) {
+            Reset(false);
         }
-
-        return null;
-    }
-    
-    public override void ModifyActiveShop(NPC npc, string shopName, Item[] items) {
-        switch( npc.type ) {
+        
+        switch( shop.NpcType ) {
             case NPCID.Dryad: {
-                var painter = Main.npc.FirstOrDefault(n => n.type == NPCID.Painter);
+                Condition painterAvailable = new($"Mods.{DeMossifier.MODNAME}.Conditions.PainterAvailable",
+                        () => Main.npc.FirstOrDefault(n => n.type == NPCID.Painter) is { active: true, homeless: false });
 
-                if( painter is not { active: true, homeless: false } ) {
-                    return;
+                shop.Add(ModContent.ItemType<Items.DeMossifier>(), painterAvailable);
+
+                Condition CondWilt(int itemId) => new($"Mods.{DeMossifier.MODNAME}.Conditions.WiltSolutionDryad", () => itemId == _currWiltSolution);
+                foreach( var solution in DeMossifier.GetSolutions(growing:false, withGeneral:false) ) {
+                    shop.Add(solution, painterAvailable, CondWilt(solution));
                 }
 
-                GetEmptyItem(items)?.SetDefaults(ModContent.ItemType<Items.DeMossifier>());
-
-                var special = ((_currWiltSolution ?? 0) != 0 || (_currGrowSolution ?? 0) != 0) && Main.rand.NextBool(100);
-                if( _currWiltSolution == null ) {
-                    var wilts = DeMossifier.GetSolutions(false, special, false);
-                    _currWiltSolution = wilts.Count > 0 ? wilts[Main.rand.Next(wilts.Count)] : 0;
-                }
-                if( _currGrowSolution == null ) {
-                    var grows = DeMossifier.GetSolutions(true, special, false);
-                    _currGrowSolution = grows.Count > 0 ? grows[Main.rand.Next(grows.Count)] : 0;
-                }
-
-                if( _currWiltSolution != 0 ) {
-                    GetEmptyItem(items)?.SetDefaults(_currWiltSolution.Value);
-                }
-                if( _currGrowSolution != 0 ) {
-                    GetEmptyItem(items)?.SetDefaults(_currGrowSolution.Value);
+                Condition CondGrow(int itemId) => new($"Mods.{DeMossifier.MODNAME}.Conditions.GrowSolutionDryad", () => itemId == _currGrowSolution);
+                foreach( var solution in DeMossifier.GetSolutions(growing:true, withGeneral:false) ) {
+                    shop.Add(solution, painterAvailable, CondGrow(solution));
                 }
             } break;
             case NPCID.Wizard: {
                 if( ModLoader.HasMod("TheConfectionRebirth") ) {
-                    GetEmptyItem(items)?.SetDefaults(ModContent.ItemType<Items.SacchariteWiltSolution>());
+                    shop.Add(ModContent.ItemType<SacchariteWiltSolution>());
                 }
             } break;
         }
@@ -89,8 +74,15 @@ public class NpcTrades : GlobalNPC
         }
     }
 
-    internal static void Reset() {
-        _currWiltSolution = null;
-        _currGrowSolution = null;
+    internal static void Reset(bool overwrite = true) {
+        var special = Main.rand.NextBool(100);
+        if( overwrite || _currWiltSolution == null ) {
+            var wilts = DeMossifier.GetSolutions(false, special, false);
+            _currWiltSolution = wilts.Count > 0 ? wilts[Main.rand.Next(wilts.Count)] : 0;
+        }
+        if( overwrite || _currGrowSolution == null ) {
+            var grows = DeMossifier.GetSolutions(true, special, false);
+            _currGrowSolution = grows.Count > 0 ? grows[Main.rand.Next(grows.Count)] : 0;
+        }
     }
 }

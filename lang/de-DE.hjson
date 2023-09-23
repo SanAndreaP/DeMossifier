@@ -1,175 +1,195 @@
 Mods: {
-    DeMossifier: {
-        Items: {
-            DeMossifier: {
-                DisplayName: Demoosifizierer
-                Tooltip:
-                    '''
-                    Wächst und welkt Moos auf Steinblöcken, wenn versprüht
-                    Verwendet Moos-Lösung
-                    '''
-            }
-            GeneralWiltSolution: {
-                DisplayName: Moos-Welk-Lösung
-                Tooltip:
-                    '''
-                    Verwendet vom Demoosifizierer
-                    Verwelkt jedes Moos
-                    '''
-            }
-            GreenWiltSolution: {
-                DisplayName: Grüne Moos-Welk-Lösung
-                Tooltip:
-                    '''
-                    Verwendet vom Demoosifizierer
-                    Verwelkt grünes Moos
-                    '''
-            }
-            BrownWiltSolution: {
-                DisplayName: Braune Moos-Welk-Lösung
-                Tooltip:
-                    '''
-                    Verwendet vom Demoosifizierer
-                    Verwelkt braunes Moos
-                    '''
-            }
-            RedWiltSolution: {
-                DisplayName: Rote Moos-Welk-Lösung
-                Tooltip:
-                    '''
-                    Verwendet vom Demoosifizierer
-                    Verwelkt rotes Moos
-                    '''
-            }
-            BlueWiltSolution: {
-                DisplayName: Blaue Moos-Welk-Lösung
-                Tooltip:
-                    '''
-                    Verwendet vom Demoosifizierer
-                    Verwelkt blaues Moos
-                    '''
-            }
-            PurpleWiltSolution: {
-                DisplayName: Lila Moos-Welk-Lösung
-                Tooltip:
-                    '''
-                    Verwendet vom Demoosifizierer
-                    Verwelkt lila Moos
-                    '''
-            }
-            LavaWiltSolution: {
-                DisplayName: Lavamoos-Welk-Lösung
-                Tooltip:
-                    '''
-                    Verwendet vom Demoosifizierer
-                    Verwelkt Lavamoos
-                    '''
-            }
-            KryptonWiltSolution: {
-                DisplayName: Krypton-Moos-Welk-Lösung
-                Tooltip:
-                    '''
-                    Verwendet vom Demoosifizierer
-                    Verwelkt Krypton-Moos
-                    '''
-            }
-            XenonWiltSolution: {
-                DisplayName: Xenon-Moos-Welk-Lösung
-                Tooltip:
-                    '''
-                    Verwendet vom Demoosifizierer
-                    Verwelkt Xenon-Moos
-                    '''
-            }
-            ArgonWiltSolution: {
-                DisplayName: Argon-Moos-Welk-Lösung
-                Tooltip:
-                    '''
-                    Verwendet vom Demoosifizierer
-                    Verwelkt Argon-Moos
-                    '''
-            }
-            GreenGrowSolution: {
-                DisplayName: Grüne Moos-Wachs-Lösung
-                Tooltip:
-                    '''
-                    Verwendet vom Demoosifizierer
-                    Wächst grünes Moos
-                    '''
-            }
-            BrownGrowSolution: {
-                DisplayName: Braune Moos-Wachs-Lösung
-                Tooltip:
-                    '''
-                    Verwendet vom Demoosifizierer
-                    Wächst braunes Moos
-                    '''
-            }
-            RedGrowSolution: {
-                DisplayName: Rote Moos-Wachs-Lösung
-                Tooltip:
-                    '''
-                    Verwendet vom Demoosifizierer
-                    Wächst rotes Moos
-                    '''
-            }
-            BlueGrowSolution: {
-                DisplayName: Blaue Moos-Wachs-Lösung
-                Tooltip:
-                    '''
-                    Verwendet vom Demoosifizierer
-                    Wächst blaues Moos
-                    '''
-            }
-            PurpleGrowSolution: {
-                DisplayName: Lila Moos-Wachs-Lösung
-                Tooltip:
-                    '''
-                    Verwendet vom Demoosifizierer
-                    Wächst lila Moos
-                    '''
-            }
-            LavaGrowSolution: {
-                DisplayName: Lavamoos-Wachs-Lösung
-                Tooltip:
-                    '''
-                    Verwendet vom Demoosifizierer
-                    Wächst Lavamoos
-                    '''
-            }
-            KryptonGrowSolution: {
-                DisplayName: Krypton-Moos-Wachs-Lösung
-                Tooltip:
-                    '''
-                    Verwendet vom Demoosifizierer
-                    Wächst Krypton-Moos
-                    '''
-            }
-            XenonGrowSolution: {
-                DisplayName: Xenon-Moos-Wachs-Lösung
-                Tooltip:
-                    '''
-                    Verwendet vom Demoosifizierer
-                    Wächst Xenon-Moos
-                    '''
-            }
-            ArgonGrowSolution: {
-                DisplayName: Argon-Moos-Wachs-Lösung
-                Tooltip:
-                    '''
-                    Verwendet vom Demoosifizierer
-                    Wächst Argon-Moos
-                    '''
-            }
+	DeMossifier: {
+		Items: {
+			DeMossifier: {
+				DisplayName: Demoosifizierer
+				Tooltip:
+					'''
+					Wächst und welkt Moos auf Steinblöcken, wenn versprüht
+					Verwendet Moos-Lösung
+					'''
+			}
+
+			GeneralWiltSolution: {
+				DisplayName: Moos-Welk-Lösung
+				Tooltip:
+					'''
+					Verwendet vom Demoosifizierer
+					Verwelkt jedes Moos
+					'''
+			}
+
+			GreenWiltSolution: {
+				DisplayName: Grüne Moos-Welk-Lösung
+				Tooltip:
+					'''
+					Verwendet vom Demoosifizierer
+					Verwelkt grünes Moos
+					'''
+			}
+
+			BrownWiltSolution: {
+				DisplayName: Braune Moos-Welk-Lösung
+				Tooltip:
+					'''
+					Verwendet vom Demoosifizierer
+					Verwelkt braunes Moos
+					'''
+			}
+
+			RedWiltSolution: {
+				DisplayName: Rote Moos-Welk-Lösung
+				Tooltip:
+					'''
+					Verwendet vom Demoosifizierer
+					Verwelkt rotes Moos
+					'''
+			}
+
+			BlueWiltSolution: {
+				DisplayName: Blaue Moos-Welk-Lösung
+				Tooltip:
+					'''
+					Verwendet vom Demoosifizierer
+					Verwelkt blaues Moos
+					'''
+			}
+
+			PurpleWiltSolution: {
+				DisplayName: Lila Moos-Welk-Lösung
+				Tooltip:
+					'''
+					Verwendet vom Demoosifizierer
+					Verwelkt lila Moos
+					'''
+			}
+
+			LavaWiltSolution: {
+				DisplayName: Lavamoos-Welk-Lösung
+				Tooltip:
+					'''
+					Verwendet vom Demoosifizierer
+					Verwelkt Lavamoos
+					'''
+			}
+
+			KryptonWiltSolution: {
+				DisplayName: Krypton-Moos-Welk-Lösung
+				Tooltip:
+					'''
+					Verwendet vom Demoosifizierer
+					Verwelkt Krypton-Moos
+					'''
+			}
+
+			XenonWiltSolution: {
+				DisplayName: Xenon-Moos-Welk-Lösung
+				Tooltip:
+					'''
+					Verwendet vom Demoosifizierer
+					Verwelkt Xenon-Moos
+					'''
+			}
+
+			ArgonWiltSolution: {
+				DisplayName: Argon-Moos-Welk-Lösung
+				Tooltip:
+					'''
+					Verwendet vom Demoosifizierer
+					Verwelkt Argon-Moos
+					'''
+			}
+
+			GreenGrowSolution: {
+				DisplayName: Grüne Moos-Wachs-Lösung
+				Tooltip:
+					'''
+					Verwendet vom Demoosifizierer
+					Wächst grünes Moos
+					'''
+			}
+
+			BrownGrowSolution: {
+				DisplayName: Braune Moos-Wachs-Lösung
+				Tooltip:
+					'''
+					Verwendet vom Demoosifizierer
+					Wächst braunes Moos
+					'''
+			}
+
+			RedGrowSolution: {
+				DisplayName: Rote Moos-Wachs-Lösung
+				Tooltip:
+					'''
+					Verwendet vom Demoosifizierer
+					Wächst rotes Moos
+					'''
+			}
+
+			BlueGrowSolution: {
+				DisplayName: Blaue Moos-Wachs-Lösung
+				Tooltip:
+					'''
+					Verwendet vom Demoosifizierer
+					Wächst blaues Moos
+					'''
+			}
+
+			PurpleGrowSolution: {
+				DisplayName: Lila Moos-Wachs-Lösung
+				Tooltip:
+					'''
+					Verwendet vom Demoosifizierer
+					Wächst lila Moos
+					'''
+			}
+
+			LavaGrowSolution: {
+				DisplayName: Lavamoos-Wachs-Lösung
+				Tooltip:
+					'''
+					Verwendet vom Demoosifizierer
+					Wächst Lavamoos
+					'''
+			}
+
+			KryptonGrowSolution: {
+				DisplayName: Krypton-Moos-Wachs-Lösung
+				Tooltip:
+					'''
+					Verwendet vom Demoosifizierer
+					Wächst Krypton-Moos
+					'''
+			}
+
+			XenonGrowSolution: {
+				DisplayName: Xenon-Moos-Wachs-Lösung
+				Tooltip:
+					'''
+					Verwendet vom Demoosifizierer
+					Wächst Xenon-Moos
+					'''
+			}
+
+			ArgonGrowSolution: {
+				DisplayName: Argon-Moos-Wachs-Lösung
+				Tooltip:
+					'''
+					Verwendet vom Demoosifizierer
+					Wächst Argon-Moos
+					'''
+			}
+
 			SacchariteWiltSolution: {
 				DisplayName: Saccharit Entferner-Lösung
 				Tooltip:
 					'''
-                    Verwendet vom Demoosifizierer
-                    Entfernt Saccharit
+					               Verwendet vom Demoosifizierer
+					               Entfernt Saccharit
 					'''
 			}
-        }
+		}
 
 		Projectiles: {
 			ArgonGrowSolution.DisplayName: Argon-Moos-Wachs-Lösung
@@ -193,9 +213,12 @@ Mods: {
 			XenonWiltSolution.DisplayName: Xenon-Moos-Welk-Lösung
 			SacchariteWiltSolution.DisplayName: Saccharit Entferner-Lösung
 		}
-		
+
 		Conditions: {
-		    DryadAndPainter: Nur verfügbar, wenn Dryade und Maler beherbergt wurden
-        }
-    }
+			DryadAndPainter: Nur verfügbar, wenn Dryade und Maler beherbergt wurden
+			PainterAvailable: Nur verfügbar, wenn Maler beherbergt wurde
+			WiltSolutionDryad: Nur verfügbar, wenn Dryade diese Welk-Lösung verkauft (wird zum Sonnenaufgang zurückgesetzt)
+			GrowSolutionDryad: Nur verfügbar, wenn Dryade diese Wachs-Lösung verkauft (wird zum Sonnenaufgang zurückgesetzt)
+		}
+	}
 }

@@ -213,9 +213,12 @@ Mods: {
 			XenonWiltSolution.DisplayName: Xenon Moss Wilt Solution
 			SacchariteWiltSolution.DisplayName: Saccharite Removal Solution
 		}
-		
+
 		Conditions: {
-		    DryadAndPainter: Only available if Dryad and Painter have been housed
-        }
+			DryadAndPainter: Only available if Dryad and Painter have been housed
+			PainterAvailable: Only available if Painter has been housed
+			WiltSolutionDryad: Only available if Dryad sells this wilt solution (reset at dawn)
+			GrowSolutionDryad: Only available if Dryad sells this grow solution (reset at dawn)
+		}
 	}
 }
