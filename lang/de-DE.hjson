@@ -189,6 +189,42 @@ Mods: {
 					               Entfernt Saccharit
 					'''
 			}
+
+			NeonGrowSolution: {
+				DisplayName: Neon-Moos-Wachs-Lösung
+				Tooltip:
+					'''
+					Verwendet vom Demoosifizierer
+					Wächst Neon-Moos
+					'''
+			}
+
+			NeonWiltSolution: {
+				DisplayName: Neon-Moos-Welk-Lösung
+				Tooltip:
+					'''
+					Verwendet vom Demoosifizierer
+					Verwelkt Neon-Moos
+					'''
+			}
+
+			HeliumGrowSolution: {
+				DisplayName: Helium-Moos-Wachs-Lösung
+				Tooltip:
+					'''
+					Verwendet vom Demoosifizierer
+					Wächst Helium-Moos
+					'''
+			}
+
+			HeliumWiltSolution: {
+				DisplayName: Helium-Moos-Welk-Lösung
+				Tooltip:
+					'''
+					Verwendet vom Demoosifizierer
+					Verwelkt Helium-Moos
+					'''
+			}
 		}
 
 		Projectiles: {
@@ -212,6 +248,10 @@ Mods: {
 			XenonGrowSolution.DisplayName: Xenon-Moos-Wachs-Lösung
 			XenonWiltSolution.DisplayName: Xenon-Moos-Welk-Lösung
 			SacchariteWiltSolution.DisplayName: Saccharit Entferner-Lösung
+			NeonGrowSolution.DisplayName: Neon-Moos-Wachs-Lösung
+			NeonWiltSolution.DisplayName: Neon-Moos-Welk-Lösung
+			HeliumGrowSolution.DisplayName: Helium-Moos-Wachs-Lösung
+			HeliumWiltSolution.DisplayName: Helium-Moos-Welk-Lösung
 		}
 
 		Conditions: {

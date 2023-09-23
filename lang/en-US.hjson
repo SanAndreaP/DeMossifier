@@ -189,6 +189,42 @@ Mods: {
 					Removes saccharite
 					'''
 			}
+
+			NeonGrowSolution: {
+				DisplayName: Neon Grow Solution
+				Tooltip:
+				    '''
+					Used by the Demossifier
+					Grows neon moss
+					'''
+			}
+
+			NeonWiltSolution: {
+				DisplayName: Neon Wilt Solution
+				Tooltip:
+				    '''
+					Used by the Demossifier
+					Wilts neon moss
+					'''
+			}
+
+			HeliumGrowSolution: {
+				DisplayName: Helium Grow Solution
+				Tooltip:
+				    '''
+					Used by the Demossifier
+					Grows helium moss
+					'''
+			}
+
+			HeliumWiltSolution: {
+				DisplayName: Helium Wilt Solution
+				Tooltip:
+				    '''
+					Used by the Demossifier
+					Wilts helium moss
+					'''
+			}
 		}
 
 		Projectiles: {
@@ -212,6 +248,10 @@ Mods: {
 			XenonGrowSolution.DisplayName: Xenon Moss Grow Solution
 			XenonWiltSolution.DisplayName: Xenon Moss Wilt Solution
 			SacchariteWiltSolution.DisplayName: Saccharite Removal Solution
+			NeonGrowSolution.DisplayName: Neon Moss Grow Solution
+			NeonWiltSolution.DisplayName: Neon Moss Wilt Solution
+			HeliumGrowSolution.DisplayName: Helium Moss Grow Solution
+			HeliumWiltSolution.DisplayName: Helium Moss Wilt Solution
 		}
 
 		Conditions: {

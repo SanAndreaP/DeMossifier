@@ -26,15 +26,31 @@ public abstract class MossDust : ModDust
     }
 
     public override bool Update(Dust dust) {
-        var g = Math.Min(dust.scale * 0.1F, 1.0F);
+        var clr = this.GetLightColor(Math.Min(dust.scale * 0.1F, 1.0F)).ToVector3();
         
-        Lighting.AddLight((int) (dust.position.X / 16.0), (int) (dust.position.Y / 16.0),
-                          g * this._color[0], g * this._color[1], g * this._color[2]);
+        Lighting.AddLight((int) (dust.position.X / 16.0), (int) (dust.position.Y / 16.0), clr.X, clr.Y, clr.Z);
 
         return true;
+    }
+
+    internal virtual Color GetLightColor(float brightness) {
+        return new Color(brightness * this._color[0], brightness * this._color[1], brightness * this._color[2]);
     }
 }
 
 public class BrownMossDust : MossDust { public BrownMossDust() : base(Color.Brown) { } }
 
 public class GeneralMossDust : MossDust { public GeneralMossDust() : base(Color.LightGray) { } }
+
+public class RainbowMossDust : MossDust
+{
+    public RainbowMossDust() : base(Color.LightGray) { }
+
+    public override Color? GetAlpha(Dust dust, Color lightColor) {
+        return Main.DiscoColor;
+    }
+
+    internal override Color GetLightColor(float brightness) {
+        return Main.DiscoColor;
+    }
+}

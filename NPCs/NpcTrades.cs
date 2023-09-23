@@ -27,12 +27,12 @@ public class NpcTrades : GlobalNPC
                 shop.Add(ModContent.ItemType<Items.DeMossifier>(), painterAvailable);
 
                 Condition CondWilt(int itemId) => new($"Mods.{DeMossifier.MODNAME}.Conditions.WiltSolutionDryad", () => itemId == _currWiltSolution);
-                foreach( var solution in DeMossifier.GetSolutions(growing:false, withGeneral:false) ) {
+                foreach( var solution in DeMossifier.GetSolutions(growing:false, withGeneral:false, dryadSellableOnly:true) ) {
                     shop.Add(solution, painterAvailable, CondWilt(solution));
                 }
 
                 Condition CondGrow(int itemId) => new($"Mods.{DeMossifier.MODNAME}.Conditions.GrowSolutionDryad", () => itemId == _currGrowSolution);
-                foreach( var solution in DeMossifier.GetSolutions(growing:true, withGeneral:false) ) {
+                foreach( var solution in DeMossifier.GetSolutions(growing:true, withGeneral:false, dryadSellableOnly:true) ) {
                     shop.Add(solution, painterAvailable, CondGrow(solution));
                 }
             } break;
@@ -77,11 +77,11 @@ public class NpcTrades : GlobalNPC
     internal static void Reset(bool overwrite = true) {
         var special = Main.rand.NextBool(100);
         if( overwrite || _currWiltSolution == null ) {
-            var wilts = DeMossifier.GetSolutions(false, special, false);
+            var wilts = DeMossifier.GetSolutions(false, special, false, true);
             _currWiltSolution = wilts.Count > 0 ? wilts[Main.rand.Next(wilts.Count)] : 0;
         }
         if( overwrite || _currGrowSolution == null ) {
-            var grows = DeMossifier.GetSolutions(true, special, false);
+            var grows = DeMossifier.GetSolutions(true, special, false, true);
             _currGrowSolution = grows.Count > 0 ? grows[Main.rand.Next(grows.Count)] : 0;
         }
     }

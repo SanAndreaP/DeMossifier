@@ -206,6 +206,20 @@ public class ArgonWiltSolution : MossSolution
     public ArgonWiltSolution() : base(TileID.ArgonMoss, TileID.ArgonMossBrick, false, DustID.Clentaminator_Purple) { }
 }
 
+public class NeonWiltSolution : MossSolution
+{
+    public NeonWiltSolution() : base(TileID.VioletMoss, TileID.VioletMossBrick, false, DustID.Clentaminator_Purple) { }
+}
+
+public class HeliumWiltSolution : MossSolution
+{
+    public HeliumWiltSolution() : base(TileID.RainbowMoss, TileID.RainbowMossBrick, false, ModContent.DustType<RainbowMossDust>()) { }
+
+    public override Color? GetAlpha(Color lightColor) {
+        return Main.DiscoColor;
+    }
+}
+
 //TheConfection
 [Autoload(false)]
 public class SacchariteWiltSolution : MossSolution
@@ -260,5 +274,19 @@ public class XenonGrowSolution : MossSolution
 public class ArgonGrowSolution : MossSolution
 {
     public ArgonGrowSolution() : base(TileID.ArgonMoss, TileID.ArgonMossBrick, true, DustID.Clentaminator_Purple) { }
+}
+
+public class NeonGrowSolution : MossSolution
+{
+    public NeonGrowSolution() : base(TileID.VioletMoss, TileID.VioletMossBrick, true, DustID.Clentaminator_Purple) { }
+}
+
+public class HeliumGrowSolution : MossSolution
+{
+    public HeliumGrowSolution() : base(TileID.RainbowMoss, TileID.RainbowMossBrick, true, ModContent.DustType<RainbowMossDust>()) { }
+
+    public override Color? GetAlpha(Color lightColor) {
+        return Main.DiscoColor;
+    }
 }
 #endregion
