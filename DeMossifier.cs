@@ -33,12 +33,12 @@ public class DeMossifier : Mod
         return (currMossId == null && REGISTERED_MOSS_BRICKS.Contains(tileId)) || currMossId == tileId;
     }
 
-    public static List<int> GetSolutions(bool? growingOnly = null, bool? specialOnly = null, bool withGeneral = true) {
-        var generalWilt = !withGeneral && !(growingOnly ?? false) ? ModContent.GetInstance<Items.GeneralWiltSolution>().Type : -1;
+    public static List<int> GetSolutions(bool? growing = null, bool? special = null, bool withGeneral = true) {
+        var generalWilt = !withGeneral && !(growing ?? false) ? ModContent.GetInstance<Items.GeneralWiltSolution>().Type : -1;
 
         return (from s in REGISTERED_SOLUTIONS
-                    where (growingOnly == null || (growingOnly.Value == s.doesGrow))
-                          && (specialOnly == null || (specialOnly.Value == s.isSpecial))
+                    where (growing == null || (growing.Value == s.doesGrow))
+                          && (special == null || (special.Value == s.isSpecial))
                           && (withGeneral || (s.id != generalWilt))
                     select s.id).ToList();
     }

@@ -31,8 +31,9 @@ public abstract class MossSolution<T> : ModItem where T : ModProjectile
         this.Item.height = 18;
         this.Item.value = Item.buyPrice(copper: this._special ? 80 : 40);
         this.Item.rare = ItemRarityID.Orange;
-        this.Item.maxStack = 999;
+        this.Item.maxStack = 9999;
         this.Item.consumable = true;
+        this.Item.ResearchUnlockCount = 100;
 
         this.Item.shoot = ModContent.ProjectileType<T>();
         this.Item.ammo = ModContent.ItemType<GeneralWiltSolution>();
