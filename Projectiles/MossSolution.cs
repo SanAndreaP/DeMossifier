@@ -40,10 +40,6 @@ public abstract class MossSolution : ModProjectile
         
         DeMossifier.RegisterMoss(mossTypeId, mossBrickTypeId);
     }
-    
-    public override void SetStaticDefaults() {
-        this.DisplayName.SetDefault("DeMossifier Projectile");
-    }
 
     public override void SetDefaults() {
         this.Projectile.aiStyle = 0;

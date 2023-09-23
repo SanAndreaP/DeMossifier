@@ -9,12 +9,6 @@ namespace DeMossifier.Items;
 
 public class DeMossifier : ModItem
 {
-	public override void SetStaticDefaults()
-	{
-		this.DisplayName.SetDefault("Demossifier");
-		this.Tooltip.SetDefault("Grows and wilts moss on stone blocks when sprayed\nUses moss solutions");
-	}
-
 	public override void SetDefaults()
 	{
 		this.Item.width = 50;

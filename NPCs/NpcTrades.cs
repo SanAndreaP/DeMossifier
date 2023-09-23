@@ -12,17 +12,27 @@ public class NpcTrades : GlobalNPC
 {
     private static int? _currWiltSolution;
     private static int? _currGrowSolution;
+
+    private static Item GetEmptyItem(Item[] items) {
+        foreach( var item in items ) {
+            if( item.IsAir ) {
+                return item;
+            }
+        }
+
+        return null;
+    }
     
-    public override void SetupShop(int type, Chest shop, ref int nextSlot) {
-        switch( type ) {
+    public override void ModifyActiveShop(NPC npc, string shopName, Item[] items) {
+        switch( npc.type ) {
             case NPCID.Dryad: {
-                var painter = Main.npc.FirstOrDefault(npc => npc.type == NPCID.Painter);
+                var painter = Main.npc.FirstOrDefault(n => n.type == NPCID.Painter);
 
                 if( painter is not { active: true, homeless: false } ) {
                     return;
                 }
 
-                shop.item[nextSlot++].SetDefaults(ModContent.ItemType<Items.DeMossifier>());
+                GetEmptyItem(items)?.SetDefaults(ModContent.ItemType<Items.DeMossifier>());
 
                 var special = ((_currWiltSolution ?? 0) != 0 || (_currGrowSolution ?? 0) != 0) && Main.rand.NextBool(100);
                 if( _currWiltSolution == null ) {
@@ -35,15 +45,15 @@ public class NpcTrades : GlobalNPC
                 }
 
                 if( _currWiltSolution != 0 ) {
-                    shop.item[nextSlot++].SetDefaults(_currWiltSolution.Value);
+                    GetEmptyItem(items)?.SetDefaults(_currWiltSolution.Value);
                 }
                 if( _currGrowSolution != 0 ) {
-                    shop.item[nextSlot++].SetDefaults(_currGrowSolution.Value);
+                    GetEmptyItem(items)?.SetDefaults(_currGrowSolution.Value);
                 }
             } break;
             case NPCID.Wizard: {
                 if( ModLoader.HasMod("TheConfectionRebirth") ) {
-                    shop.item[nextSlot++].SetDefaults(ModContent.ItemType<Items.SacchariteWiltSolution>());
+                    GetEmptyItem(items)?.SetDefaults(ModContent.ItemType<Items.SacchariteWiltSolution>());
                 }
             } break;
         }

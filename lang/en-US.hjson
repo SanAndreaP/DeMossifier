@@ -1,0 +1,221 @@
+Mods: {
+	DeMossifier: {
+		Items: {
+			DeMossifier: {
+				DisplayName: Demossifier
+				Tooltip:
+					'''
+					Grows and wilts moss on stone blocks when sprayed
+					Uses moss solutions
+					'''
+			}
+
+			GeneralWiltSolution: {
+				DisplayName: Moss Wilt Solution
+				Tooltip:
+					'''
+					Used by the Demossifier
+					Wilts all mosses
+					'''
+			}
+
+			GreenWiltSolution: {
+				DisplayName: Green Moss Wilt Solution
+				Tooltip:
+					'''
+					Used by the Demossifier
+					Wilts green moss
+					'''
+			}
+
+			BrownWiltSolution: {
+				DisplayName: Brown Moss Wilt Solution
+				Tooltip:
+					'''
+					Used by the Demossifier
+					Wilts brown moss
+					'''
+			}
+
+			RedWiltSolution: {
+				DisplayName: Red Moss Wilt Solution
+				Tooltip:
+					'''
+					Used by the Demossifier
+					Wilts red moss
+					'''
+			}
+
+			BlueWiltSolution: {
+				DisplayName: Blue Moss Wilt Solution
+				Tooltip:
+					'''
+					Used by the Demossifier
+					Wilts blue moss
+					'''
+			}
+
+			PurpleWiltSolution: {
+				DisplayName: Purple Moss Wilt Solution
+				Tooltip:
+					'''
+					Used by the Demossifier
+					Wilts purple moss
+					'''
+			}
+
+			LavaWiltSolution: {
+				DisplayName: Lava Moss Wilt Solution
+				Tooltip:
+					'''
+					Used by the Demossifier
+					Wilts lava moss
+					'''
+			}
+
+			KryptonWiltSolution: {
+				DisplayName: Krypton Moss Wilt Solution
+				Tooltip:
+					'''
+					Used by the Demossifier
+					Wilts krypton moss
+					'''
+			}
+
+			XenonWiltSolution: {
+				DisplayName: Xenon Moss Wilt Solution
+				Tooltip:
+					'''
+					Used by the Demossifier
+					Wilts xenon moss
+					'''
+			}
+
+			ArgonWiltSolution: {
+				DisplayName: Argon Moss Wilt Solution
+				Tooltip:
+					'''
+					Used by the Demossifier
+					Wilts argon moss
+					'''
+			}
+
+			GreenGrowSolution: {
+				DisplayName: Green Moss Grow Solution
+				Tooltip:
+					'''
+					Used by the Demossifier
+					Grows green moss
+					'''
+			}
+
+			BrownGrowSolution: {
+				DisplayName: Brown Moss Grow Solution
+				Tooltip:
+					'''
+					Used by the Demossifier
+					Grows brown moss
+					'''
+			}
+
+			RedGrowSolution: {
+				DisplayName: Red Moss Grow Solution
+				Tooltip:
+					'''
+					Used by the Demossifier
+					Grows red moss
+					'''
+			}
+
+			BlueGrowSolution: {
+				DisplayName: Blue Moss Grow Solution
+				Tooltip:
+					'''
+					Used by the Demossifier
+					Grows blue moss
+					'''
+			}
+
+			PurpleGrowSolution: {
+				DisplayName: Purple Moss Grow Solution
+				Tooltip:
+					'''
+					Used by the Demossifier
+					Grows purple moss
+					'''
+			}
+
+			LavaGrowSolution: {
+				DisplayName: Lava Moss Grow Solution
+				Tooltip:
+					'''
+					Used by the Demossifier
+					Grows lava moss
+					'''
+			}
+
+			KryptonGrowSolution: {
+				DisplayName: Krypton Moss Grow Solution
+				Tooltip:
+					'''
+					Used by the Demossifier
+					Grows krypton moss
+					'''
+			}
+
+			XenonGrowSolution: {
+				DisplayName: Xenon Moss Grow Solution
+				Tooltip:
+					'''
+					Used by the Demossifier
+					Grows xenon moss
+					'''
+			}
+
+			ArgonGrowSolution: {
+				DisplayName: Argon Moss Grow Solution
+				Tooltip:
+					'''
+					Used by the Demossifier
+					Grows argon moss
+					'''
+			}
+
+			SacchariteWiltSolution: {
+				DisplayName: Saccharite Removal Solution
+				Tooltip:
+					'''
+					Used by the Demossifier
+					Removes saccharite
+					'''
+			}
+		}
+
+		Projectiles: {
+			ArgonGrowSolution.DisplayName: Argon Moss Grow Solution
+			ArgonWiltSolution.DisplayName: Argon Moss Wilt Solution
+			BlueGrowSolution.DisplayName: Blue Moss Grow Solution
+			BlueWiltSolution.DisplayName: Blue Moss Wilt Solution
+			BrownGrowSolution.DisplayName: Brown Moss Grow Solution
+			BrownWiltSolution.DisplayName: Brown Moss Wilt Solution
+			GeneralWiltSolution.DisplayName: Moss Wilt Solution
+			GreenGrowSolution.DisplayName: Green Moss Grow Solution
+			GreenWiltSolution.DisplayName: Green Moss Wilt Solution
+			KryptonGrowSolution.DisplayName: Krypton Moss Grow Solution
+			KryptonWiltSolution.DisplayName: Krypton Moss Wilt Solution
+			LavaGrowSolution.DisplayName: Lava Moss Grow Solution
+			LavaWiltSolution.DisplayName: Lava Moss Wilt Solution
+			PurpleGrowSolution.DisplayName: Purple Moss Grow Solution
+			PurpleWiltSolution.DisplayName: Purple Moss Wilt Solution
+			RedGrowSolution.DisplayName: Red Moss Grow Solution
+			RedWiltSolution.DisplayName: Red Moss Wilt Solution
+			XenonGrowSolution.DisplayName: Xenon Moss Grow Solution
+			XenonWiltSolution.DisplayName: Xenon Moss Wilt Solution
+			SacchariteWiltSolution.DisplayName: Saccharite Removal Solution
+		}
+		
+		Conditions: {
+		    DryadAndPainter: Only available if Dryad and Painter have been housed
+        }
+	}
+}

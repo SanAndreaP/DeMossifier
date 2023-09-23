@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Terraria;
 using Terraria.ModLoader;
 
 // ReSharper disable ArrangeRedundantParentheses
@@ -9,6 +10,8 @@ namespace DeMossifier;
 
 public class DeMossifier : Mod
 {
+    public static readonly string MODNAME = "DeMossifier";
+    
     private static readonly List<ushort> REGISTERED_MOSSES = new();
     private static readonly List<ushort> REGISTERED_MOSS_BRICKS = new();
     private static readonly List<SolutionDef> REGISTERED_SOLUTIONS = new();
@@ -40,11 +43,11 @@ public class DeMossifier : Mod
                     select s.id).ToList();
     }
 
-    private static void OnStartDay(On.Terraria.Main.orig_UpdateTime_StartDay orig, ref bool stopEvents) {
-        NPCs.NpcTrades.Reset();
-        
-        orig(ref stopEvents);
-    }
+    // private static void OnStartDay(On.Terraria.Main.orig_UpdateTime_StartDay orig, ref bool stopEvents) {
+    //     NPCs.NpcTrades.Reset();
+    //     
+    //     orig(ref stopEvents);
+    // }
 
     public override void Load() {
         if( ModLoader.TryGetMod("TheConfectionRebirth", out var confection) ) {
@@ -56,15 +59,15 @@ public class DeMossifier : Mod
             this.AddContent<Items.SacchariteWiltSolution>();
         }
         
-        On.Terraria.Main.UpdateTime_StartDay += OnStartDay;
+        // Terraria.Main.UpdateTime_StartDay += OnStartDay;
     }
 
     public override void Unload() {
         REGISTERED_SOLUTIONS.Clear();
         REGISTERED_MOSSES.Clear();
         REGISTERED_MOSS_BRICKS.Clear();
-
-        On.Terraria.Main.UpdateTime_StartDay -= OnStartDay;
+        
+        // Terraria.Main.UpdateTime_StartDay -= OnStartDay;
     }
 
     private sealed class SolutionDef
@@ -77,6 +80,15 @@ public class DeMossifier : Mod
             this.id = id;
             this.doesGrow = doesGrow;
             this.isSpecial = isSpecial;
+        }
+    }
+    
+    public sealed class UpdateTimeSystem : ModSystem
+    {
+        public override void PostUpdateWorld() {
+            if( Main.time < Main.dayRate && Main.dayTime ) {
+                NPCs.NpcTrades.Reset();
+            }
         }
     }
 }
